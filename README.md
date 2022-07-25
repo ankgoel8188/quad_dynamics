@@ -1,1 +1,1 @@
-# quad_dynamics
+# Continuous time Quad simulator
