@@ -26,13 +26,13 @@ Psi     = Eul_Angles(3);
 xdot(1:3,1) = v;
 xdot(4:6,1) = g + force/m*transpose(O3psi) * transpose(O2theta) * transpose(O1phi)*[0;0;1];
 
-xdot(7:9,1) = S_Phi_Theta(Phi,Theta)*omega_QE;
+xdot(7:9,1) = S_Phi_Theta_inv(Phi,Theta)*omega_QE;
 xdot(10:12,1) = J\(-cross(omega_QE,J*omega_QE)+moment);
 
 
 end
 
-function S = S_Phi_Theta(Phi,Theta)
+function S = S_Phi_Theta_inv(Phi,Theta)
 S = [1 sin(Phi)*tan(Theta) cos(Phi)*tan(Theta);
     0 cos(Phi) -sin(Phi);
     0 sin(Phi)*sec(Theta) cos(Phi)*sec(Theta)];
