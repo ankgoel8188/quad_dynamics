@@ -1,2 +1,4 @@
 *.slxc
 /slprj
+*.asv
+*.slx.autosave
